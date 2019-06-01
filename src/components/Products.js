@@ -5,13 +5,13 @@ class Products extends Component {
     render() {
         const products = this.props.products;
 
-        const ProductsList = products.map(product => (
+        const Products = products.map(product => (
             <ProductCard key={product._id} product={product} />
         ));
 
         return (
             <div className="row">
-                {ProductsList}
+                {Products}
             </div>
         )
     }

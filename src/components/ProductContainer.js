@@ -13,7 +13,6 @@ import '../fonts/elegant-font/html-css/style.css';
 import '../vendor/animate/animate.css';
 import '../vendor/css-hamburgers/hamburgers.min.css';
 import '../vendor/animsition/css/animsition.min.css';
-//import '../vendor/select2/select2.min.css';
 import '../css/select2.css';
 import '../vendor/slick/slick.css';
 import '../css/util.css';
@@ -25,69 +24,7 @@ class ProductContainer extends Component {
     }
 
     async componentDidMount() {
-        //let products = await fetch('http://localhost:1003/products').then(response => response.json());
-        //this.setState({products});
-        let products = [{
-            "name":'Herschel supply co 25l',
-            "price":'75.00',
-            "image":'item-02.jpg'
-        },
-        {
-            "name":'Denim jacket blue',
-            "price":'92.50',
-            "image":'item-03.jpg'
-        },
-        {
-            "name":'Frayed denim shorts',
-            "price":'29.50',
-            "image":'item-07.jpg'
-        },
-        {
-            "name":'Coach slim easton black',
-            "price":'165.90',
-            "image":'item-01.jpg'
-        },
-        {
-            "name":'Herschel supply co 25l',
-            "price":'75.00',
-            "image":'item-02.jpg'
-        },
-        {
-            "name":'Denim jacket blue',
-            "price":'92.50',
-            "image":'item-03.jpg'
-        },
-        {
-            "name":'Frayed denim shorts',
-            "price":'29.50',
-            "image":'item-07.jpg'
-        },
-        {
-            "name":'Coach slim easton black',
-            "price":'165.90',
-            "image":'item-01.jpg'
-        },
-        {
-            "name":'Herschel supply co 25l',
-            "price":'75.00',
-            "image":'item-02.jpg'
-        },
-        {
-            "name":'Denim jacket blue',
-            "price":'92.50',
-            "image":'item-03.jpg'
-        },
-        {
-            "name":'Frayed denim shorts',
-            "price":'29.50',
-            "image":'item-07.jpg'
-        },
-        {
-            "name":'Coach slim easton black',
-            "price":'165.90',
-            "image":'item-01.jpg'
-        }];
-
+        let products = await fetch('http://localhost:1003/products').then(response => response.json());
         this.setState({products});
 
 		$(".selection-2").select2({

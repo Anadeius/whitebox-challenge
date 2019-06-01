@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import ProductContainer from './components/ProductContainer';
@@ -10,8 +10,10 @@ class App extends Component {
     return (
       <BrowserRouter>
         <Header />
-        <Route exact path={['/', '/product.html']} component={ProductContainer} />
-        <Route exact path='/product-detail.html/:id' component={ProductDetailsContainer} />
+          <Switch>
+            <Route exact path={['/', 'index.html', '/product.html']} component={ProductContainer} />
+            <Route exact path='/:id' component={ProductDetailsContainer} />
+          </Switch>
         <Footer />
       </BrowserRouter>
     )
