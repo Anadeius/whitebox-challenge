@@ -7,11 +7,11 @@ class Sidebar extends Component {
         //let filterBar = this.filterRef.current;
         let filterBar = document.getElementById('filter-bar');
         noUiSlider.create(filterBar, {
-            start: [50,200],
+            start: [0,200],
             direction: 'ltr',
             connect: true,
             range: {
-                'min': 50,
+                'min': 0,
                 'max': 200
             }
         });

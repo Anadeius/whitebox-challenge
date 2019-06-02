@@ -17,7 +17,7 @@
     "slick-carousel": "1.8.0"
   },
   "scripts": {
-    "dev": "concurrently \"node api.js\" \"yarn start\"",
+    "dev": "concurrently \"node api.js\" \"npm run start\"",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
