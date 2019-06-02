@@ -19,5 +19,5 @@ I chose to utilize React and Express to handle all the routing and logic for my 
 #### `npm install`
 Installs all dependencies required. The bulk of the application was bootstrapped with create-react-app.
 
-#### 'npm run dev'
+#### `npm run dev`
 The dev script will utilize concurrently to start the api.js server file and initiate the react-scripts 'start' script, while will load the application at [http://localhost:3000](http:/localhost:3000). All calls to the API server will hit [http://localhost:1003](http://localhost:1003) on the `/products` and `/products/:id` endpoints.
