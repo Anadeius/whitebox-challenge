@@ -16,8 +16,6 @@ class Sidebar extends Component {
             }
         });
 
-        filterBar.noUiSlider.reset();
-
         let skipValues = [
             document.getElementById('value-lower'),
             document.getElementById('value-upper')
@@ -25,10 +23,28 @@ class Sidebar extends Component {
 
         filterBar.noUiSlider.on('update', (values, handle) => {
             skipValues[handle].innerHTML = Math.round(values[handle]);
+            
+        });
+
+        filterBar.noUiSlider.on('change', (values, handle) => {
+            if(handle === 0){
+                this.props.handlePrice('min', Math.round(values[handle]));
+            }
+            else{
+                this.props.handlePrice('max', Math.round(values[handle]));
+            }
         });
     }
 
     render() {
+        const {
+            minPrice,
+            maxPrice,
+            colors,
+            searchQuery,
+            handleSearch
+        } = this.props;
+
         return (
             <div className="col-sm-6 col-md-4 col-lg-3 p-b-50">
                 <div className="leftbar p-r-20 p-r-0-sm">
@@ -119,7 +135,7 @@ class Sidebar extends Component {
                     </div>
 
                     <div className="search-product pos-relative bo4 of-hidden">
-                    <input className="s-text7 size6 p-l-23 p-r-50" type="text" name="search-product" placeholder="Search Products..." />
+                    <input className="s-text7 size6 p-l-23 p-r-50" type="text" name="search-product" placeholder="Search Products..." value={searchQuery} onChange={handleSearch}/>
 
                     <button className="flex-c-m size5 ab-r-m color2 color0-hov trans-0-4">
                         <i className="fs-12 fa fa-search" aria-hidden="true"></i>
